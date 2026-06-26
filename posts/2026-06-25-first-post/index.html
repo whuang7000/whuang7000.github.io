@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello, World 🌸 · floofy candy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../styles/main.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../../" class="back-link">← back</a>
+      <h1 class="site-title">floofy candy ✿</h1>
+    </div>
+  </header>
+
+  <!-- Crypto manifest: public params only, no plaintext -->
+  <script type="application/json" id="manifest">{"salt":"sM6SlxwWDCVeg4jG0enpdw==","iterations":250000,"media":[],"hasMusic":false}</script>
+
+  <main class="post-main">
+    <article>
+      <header class="post-header">
+        <div class="post-meta">
+          <span class="post-date">Wed Jun 24</span>
+          <span class="privacy-badge privacy-2" title="Privacy level 2">🔒🔒</span>
+        </div>
+        <h1 class="post-title">{{TITLE}}</h1>
+      </header>
+
+      <section id="lock-section" class="lock-section">
+        <div class="lock-card">
+          <div class="lock-icon">🔐</div>
+          <p class="lock-question">What is my favorite color?</p>
+          <p class="hint">Hint: it's very soft</p>
+          <form id="unlock-form" autocomplete="off">
+            <input
+              id="answer-input"
+              type="text"
+              placeholder="your answer..."
+              autocomplete="off"
+              autofocus
+            />
+            <button type="submit">Unlock ✿</button>
+          </form>
+          <p id="error-msg" class="error-msg" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section id="content-section" class="post-content hidden"></section>
+    </article>
+  </main>
+
+  <!-- Music player bar (hidden until unlocked) -->
+  <div id="music-bar" class="music-bar hidden">
+    <button id="play-btn" class="play-btn">▶</button>
+    <span id="elapsed" class="time">0:00</span>
+    <input id="seek" type="range" class="seek" min="0" max="100" value="0" />
+    <span id="total" class="time">0:00</span>
+    <input id="volume" type="range" class="volume" min="0" max="100" value="80" />
+    <span class="vol-icon">🔊</span>
+    <audio id="audio-el" preload="none"></audio>
+  </div>
+
+  <footer class="site-footer">
+    <p>made with 🌸 and secrets</p>
+  </footer>
+
+  <script type="module" src="../../js/post.js"></script>
+</body>
+</html>
